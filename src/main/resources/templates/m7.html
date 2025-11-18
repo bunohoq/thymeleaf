@@ -23,7 +23,16 @@
 		<a th:href="@{/list.do(seq=${seq})}">이동하기</a>
 		
 		<!-- href="/list.de?seq=10&mode=add" -->
-		<a th:href="@{/list.do(seq=${seq}, mod=${mod})"></a>
+		<a th:href="@{/list.do(seq=${seq}, mode=${mode})}">이동하기</a>
+		
+		<!-- href="/view.do?search=y&column=subject&word=자바" -->
+		<a href="@{/view.do(search=${map.search}, column=${map.column}, word=${map.word})}">이동하기</a>
+		
+		<hr>
+		
+		<a href="/board/10">글보기</a>
+		<a href="@{/board(seq=${seq})}">글보기(쿼리스트링)</a>
+		<a href="@{/board/{aaa}(aaa=${seq})}">글보기(패스변수)</a>
 		
 		
 	</div>
