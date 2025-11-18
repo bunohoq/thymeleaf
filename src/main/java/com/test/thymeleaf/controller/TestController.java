@@ -140,5 +140,29 @@ public class TestController {
 		
 		return "m7";
 	}
+	@GetMapping("/m8")
+	public String m8(Model model) {
+		
+		int seq = 10;
+		String mode = "list";
+		
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("search", "y");
+		map.put("column", "subject");
+		map.put("word", "자바");
+		
+		
+		List<String> names = mapper.names();
+		List<AddressDTO> list = mapper.list();
+		
+		model.addAttribute("seq", seq);
+		model.addAttribute("mode", mode);
+		model.addAttribute("map", map);
+		model.addAttribute("names", names);
+		model.addAttribute("list", list);	
+		
+		
+		return "m8";
+	}
 	
 }
