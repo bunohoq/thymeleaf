@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    username: springboot
+    url: jdbc:oracle:thin:@localhost:1521/xe
+    password: java1234
+  application:
+    name: thymeleaf
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.test.thymeleaf.dto
