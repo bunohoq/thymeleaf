@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Thymeleaf</title>
+	<link rel="stylesheet" href="http://bit.ly/3WJ5ilK" />
+	<style>
+		a { display:block; margin: 5px; }
+	</style>
+</head>
+<body>
+	<!-- m7.html -->
+	<h1>링크 표현식 <small>링크 or 쿼리스트링</small></h1>
+	
+	<div>
+		<a href="/list.do?seq=10">이동하기</a>
+		<a href="/list.do?seq=${seq}">이동하기</a>
+		
+		<a th:href="'/list.do?seq=' + ${seq}">이동하기</a>
+		<a th:href="|/list.do?seq=${seq}|">이동하기</a>
+		<!--/* <a th:href="/list.do?seq=${seq}">이동하기</a> */-->
+		
+		<a th:href="@{/list.do(seq=${seq})}">이동하기</a>
+		
+		<!-- href="/list.de?seq=10&mode=add" -->
+		<a th:href="@{/list.do(seq=${seq}, mod=${mod})"></a>
+		
+		
+	</div>
+	
+</body>
+</html>
