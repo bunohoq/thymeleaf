@@ -9,18 +9,18 @@ Spring + Thymeleaf 문법을 정리하며 만든 예제 페이지 모음입니�
 📁 프로젝트 구조
 --------------------------------------------
 templates/
- ├── m1.html   # 변수 표현식
- ├── m2.html   # 스프링 메시지(국제화)
- ├── m3.html   # 연산자
- ├── m4.html   # HTML 속성 조작
- ├── m5.html   # 콘텐츠 조작(text/utext/inline)
- ├── m6.html   # 숫자·날짜 포맷팅
- ├── m7.html   # 링크 표현식(URL)
- ├── m8.html   # 제어 속성 + 반복문 + 상태값
- ├── m9.html   # 조각 페이지(fragment)
- └── inc/
-      ├── sub1.html
-      └── sub2.html
+ ├─ m1.html   # 변수 표현식
+ ├─ m2.html   # 스프링 메시지(국제화)
+ ├─ m3.html   # 연산자
+ ├─ m4.html   # HTML 속성 조작
+ ├─ m5.html   # 콘텐츠 조작(text/utext/inline)
+ ├─ m6.html   # 숫자·날짜 포맷팅
+ ├─ m7.html   # 링크 표현식(URL)
+ ├─ m8.html   # 제어 속성 + 반복문 + 상태값
+ ├─ m9.html   # 조각 페이지(fragment)
+ └─ inc/
+     ├─ sub1.html
+     └─ sub2.html
 
 
 📘 예제 상세 설명
