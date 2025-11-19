@@ -42,5 +42,131 @@
 		<div th:case="*">기타</div>
 	</div>
 	
+	<hr>
+	<!-- 
+	<ul>
+	<c:forEach items="${names}" var="name">
+		<li>${name}</li>
+	</c:forEach>
+	</ul>
+	-->
+	
+	<ul th:each="name:${names}">
+		<li th:each="name:${names}" th:text="${name}">
+	</ul>
+	
+	<hr>
+	
+	<ul>
+		<li th:each="dto : ${list}" 
+			th:text="${dto.name} + ':' + ${dto.age}"></li>
+	</ul>
+
+	<hr>
+	
+	<ul>
+		<li th:each="dto : ${list}" 
+			th:text="|${dto.name} : ${dto.age}|"></li>
+	</ul>
+	
+	<hr>
+	
+	<ul>
+		<li th:each="dto : ${list}" > [[${dto.name}]] : [[${dto.age}]]</li>
+	</ul>
+	
+	<hr>
+	
+	<div th:each="num : ${#numbers.sequence(1,10)}" th:text="${num}"></div>
+
+	<hr>
+	
+	<!--/* 
+		
+		1. 타임리프의 대부분의 기능은 'th:속성' 이다.
+		2. 유일하게 타임리프 태그가 1개 있다.
+				- <th:block>
+				- HTML의 <div> 같은 역할 > 아무 의미 없음
+	 */-->
+	 
+	<div th:if="${seq > 0}">10은 양수입니다.</div>
+	<div th:if="${seq <= 0}">10은 양수아닙니다.</div>
+
+	<th:block th:if="${seq > 0}">
+	<div>10은 양수입니다.</div>
+	</th:block>
+	
+	<th:block th:if="${seq <=0}">
+	<div>10은 양수아닙니다.</div>
+	</th:block>
+	 
+	<hr>
+	
+	<h3>홍길동</h3>
+	<ul>
+		<li>나이</li>
+		<li>주소</li>
+		<li>성별</li>
+	</ul>
+
+	<hr>
+	
+	<!-- 
+	bodt > h3, body > ul
+	document.queryselector (body < ul)
+	 -->
+	 
+	<div th:each="dto : ${list}">
+	<h3 th:text="${dto.name}">홍길동</h3>
+	<ul>
+		<li th:text="${dto.age}">나이</li>
+		<li th:text="${dto.address}">주소</li>
+		<li th:text="${dto.gender}">성별</li>
+	</ul>
+	</div>
+
+	<hr>
+	<th:block th:each="dto : ${list}" th:object="${dto}">
+	<h3 th:text="*{name}">홍길동</h3>
+	<ul>
+		<li th:text="*{age}">나이</li>
+		<li th:text="*{address}">주소</li>
+		<li th:text="*{gender}">성별</li>
+	</ul>
+	</th:block>
+	
+	<hr>
+	
+	<h2>주소록</h2>
+	
+	<table>
+		<tr>
+			<th>번호</th>
+			<th>이름</th>
+			<th>나이</th>
+			<th>성별</th>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+		<!-- <c:forEach items="${list}" var="dto" varStatus="stat"> -->
+		<tr th:each="dto, status : ${list}" th:object="${dto}" th:style="${status.even} ? 'background-color:gold' : 'background-color:tomato'">
+			<td th:text="*{seq}"></td>
+			<td th:text="*{name}"></td>
+			<td th:text="*{age}"></td>
+			<td th:text="*{gender}"></td>
+			<td th:text="${status.index}"></td>
+			<td th:text="${status.count}"></td>
+			<td th:text="${status.size}"></td>
+			<td th:text="${status.even}"></td>
+			<td th:text="${status.odd}"></td>
+			<td></td>
+		</tr>
+	</table>
+	
+	<hr>
 </body>
 </html>
