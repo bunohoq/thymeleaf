@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Thymeleaf</title>
+	<link rel="stylesheet" href="http://bit.ly/3WJ5ilK" />
+</head>
+<body>
+	<!-- m9.html -->
+	
+	<!-- 
+		조각 페이지 조각 기능에 한해서
+		- JSP(include) ~ 타임리프 ~ Tiles(Spring)
+	-->
+	 
+	<!-- 
+		
+		조각 페이지
+		- templates > inc > sub1.html
+		- templates > inc > sub2.html
+	
+		1. th:fragment
+			- 조각 페이지(코드) 선언
+		
+		2. th:insert
+			- 조각 페이지(코드) 삽입
+			
+		3. th:replace
+			- 조각 페이지(코드) 삽입
+	-->
+	
+	<h1>Thymeleaf Fragment</h1>
+	
+	<div th:insert="~{inc/sub1.html}"></div>
+	<div th:replace="~{inc/sub1.html}"></div>
+	
+	<hr>
+	
+	<div th:insert="~{inc/sub1.html}">권장</div>
+	<div th:insert="~{inc/sub1}"></div>
+	<div th:insert="inc/sub1"></div>
+	
+	<hr>
+	
+	<div th:insert="~{inc/sub2.html}"></div>
+	
+	<hr>
+	
+	<!-- /* 
+	<div th:insert="~{inc/sub2.html :: tel}"></div>
+	
+	<hr>
+	
+	<div th:replace="~{inc/sub2.html :: title}"></div>
+	 */-->	
+		
+	<hr>
+	
+	<div th:replace="~{inc/sub2.html :: title('게시판', '목록보기')}"></div>
+	<div th:replace="~{inc/sub2.html :: title('회원', '가입하기')}"></div>
+	
+	<!-- 
+		타임즈
+		- 조각 페이지
+		- 템플릿(레이아웃)
+		
+		JSP
+		- 조각 페이지
+		
+		타임리프
+		- 조각 페이지
+		- 템플릿(레이아웃) > 표준(X), 사제 라이브러리(O)
+	
+	 -->
+	
+	
+	
+</body>
+</html>

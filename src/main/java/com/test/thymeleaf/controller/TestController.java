@@ -164,5 +164,10 @@ public class TestController {
 		
 		return "m8";
 	}
+	@GetMapping("/m9")
+	public String m9(Model model) {
+		
+		return "m9";
+	}
 	
 }
